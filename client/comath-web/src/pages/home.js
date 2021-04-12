@@ -1,4 +1,4 @@
-export default function home () {
+export default function home() {
   return (
     <>
       <div class="mt-3">

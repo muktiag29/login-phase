@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import { GoogleLogin } from "react-google-login"
-import { UseHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-const login = () => {
-  const [isOnline, setIsOnline] = useState(null);
+export default function Login() {
+  const history = useHistory()
 
   async function responseGoogle(res) {
     try {
@@ -14,7 +13,7 @@ const login = () => {
         data: res.profileObj,
       })
       await localStorage.setItem("access_token", data.access_token)
-      // await history.push("/home", data)
+      await history.push("/home", data)
     } catch (response) {
       console.log(response, "Error")
     }
@@ -37,5 +36,3 @@ const login = () => {
     </>
   )
 }
-
-export default login
