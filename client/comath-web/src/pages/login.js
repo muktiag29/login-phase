@@ -16,22 +16,21 @@ export default function Login() {
       await history.push("/home", data)
     } catch (response) {
       console.log(response, "Error")
+  
     }
   }
 
   return (
     <>
       <div className="row justify-content-center" style={{ marginTop: "40vh" }}>
-        <button className="btn btn-outline-dark btn-login mb-3">
-          <GoogleLogin
-            clientId="84057386720-lbege5n7a03308lte2ebu8j0uvgu0nh2.apps.googleusercontent.com"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-            className="btn-google"
-            style={{ background: "transparent" }}
-          />
-        </button>
+        <GoogleLogin
+          clientId="84057386720-lbege5n7a03308lte2ebu8j0uvgu0nh2.apps.googleusercontent.com"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={"single_host_origin"}
+          className="btn-google"
+          style={{ background: "transparent" }}
+        />
       </div>
     </>
   )
